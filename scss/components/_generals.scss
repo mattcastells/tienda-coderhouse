@@ -1,0 +1,22 @@
+html {
+  background: $background-color;
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+}
+
+body {
+  max-width: 1220px;
+  margin: auto;
+}
+
+p {
+  color: $text-color;
+  font-size: 1em;
+  font-family: "work-sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}

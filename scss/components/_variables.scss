@@ -1,0 +1,21 @@
+// Colores para la paginaa
+$background-color: #edeff0;
+$secondary-background: #3e474f;
+$text-color: #0e0b16;
+$accent-color: #d63d00;
+
+// Colores para los productos
+$game-color: #a239ca;
+$console-color: #4717f6;
+
+// Resoluciones para responsive
+$cellphone: 768;
+$tablet: 1050;
+$notebook: 120;
+
+// Fuente
+@font-face {
+  font-family: "work-sans";
+  src: url(../../assets/Work_Sans/static/WorkSans-Medium.ttf);
+  font-weight: 300;
+}
