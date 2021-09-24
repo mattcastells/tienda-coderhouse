@@ -1,6 +1,9 @@
+// ARCHIVO DE RESPALDO ORIGINAL
+
+
 // Stock de productos
 
-let stockProductos = [
+let stockJuegos = [
 
     {id: 1, nombre: "dark souls", plataforma: ["pc", "ps4", "xbox"], genero: ["accion", "aventura"], precio: 2560, desarollador: "from software", img: '../images/juegos/dark-souls-1.jpg'},
     {id: 2, nombre: "dark souls 2", plataforma: ["pc", "ps4", "xbox"], genero: ["accion", "aventura"], precio: 2560, desarollador: "from software", img: '../images/juegos/dark-souls-2.jpg'},
@@ -33,12 +36,13 @@ let stockProductos = [
     {id: 29, nombre: "monster hunter world", plataforma: ["pc","ps4","xbox"], genero: ["accion", "aventura"], precio: 6000, desarollador: "capcom", img: '../images/juegos/monster-hunter-world.jpg'},
     {id: 30, nombre: "mortal kombat 11", plataforma: ["pc", "ps4", "xbox"], genero: ["peleas", "accion"], precio: 5560, desarollador: "netherrealm studios", img: '../images/juegos/mortal-kombat-11.jpg'},
 
-    
-    // Stock de consolas
+]
+
+let stockConsolas = [
+
     {id: 1, nombre: ["playstation 4", "ps4", "play"], precio: 22000, compania: "sony", img: "../images/consolas/ps4.jpg"},
     {id: 2, nombre: ["nintendo", "switch", "nintentendo switch"], precio: 32000, compania: "nintendo", img: "../images/consolas/switch.jpg"},
-    {id: 3, nombre: ["xbox", "x box", "one", "xbox one"], precio: 42000, compania: "microsoft", img: "../images/consolas/xbox-one.jpg"},
-
+    {id: 3, nombre: ["xbox", "x box", "one", "xbox one"], precio: 42000, compania: "microsoft", img: "../images/consolas/xbox-one.jpg"}
 ]
 
 
@@ -48,23 +52,57 @@ let carritoCompras = []  // Es establecido como un array para pushear las variab
 function agregarCarrito () {
 
     let eleccionProducto = "";  
+    let eleccionTipoProducto = "";
 
     do {
-    // Se le solicita al cliente el producto que desea
-    eleccionProducto = prompt("Que producto esta buscando?\n Para dejar de agregar productos presione ESC").toLowerCase();
 
-    // El producto se filtra y es agregado al carrito
-    let agregarProducto = stockProductos.filter((parametro) => parametro.nombre == eleccionProducto) [0]
-    carritoCompras.push(agregarProducto)
+    // Se le solicita al cliente el tipo de producto que desea
+    
+    eleccionTipoProducto = prompt("Que producto esta buscando?\n juegos\n consolas").toLowerCase();
 
-    // Se muestra en consola para verificar su funcionamiento
-    console.log(carritoCompras);
-    console.log(eleccionProducto)
+    } while ((eleccionTipoProducto != "juegos") || (eleccionTipoProducto === "consolas") || (eleccionTipoProducto === "ESC"));
 
-    // Se actualiza el carrito para que el cliente pueda ver el total de sus elecciones
-    actualizarCarrito()
+    if (eleccionTipoProducto === "juegos") {
 
-    } while (eleccionProducto != "ESC");
+        do {
+
+            eleccionProducto = prompt("Que juegos esta buscando?\n Para dejar de agregar juegos presione ESC").toLowerCase();
+
+            // El producto se filtra y es agregado al carrito
+            let agregarProducto = stockJuegos.filter((parametro) => parametro.nombre == eleccionProducto) [0]
+            carritoCompras.push(agregarProducto)
+
+            // Se muestra en consola para verificar su funcionamiento
+            console.log(carritoCompras);
+            console.log(eleccionProducto)
+
+            // Se actualiza el carrito para que el cliente pueda ver el total de sus elecciones
+            actualizarCarrito()
+
+        } while (eleccionProducto != "ESC")
+
+    } else if (eleccionTipoProducto === "consolas") {
+
+        do {
+
+            eleccionProducto = prompt("Que consolas esta buscando?\n Para dejar de agregar consolas presione ESC").toLowerCase();
+
+            // El producto se filtra y es agregado al carrito
+            let agregarProducto = stockConsolas.filter((parametro) => parametro.nombre == eleccionProducto) [0]
+            carritoCompras.push(agregarProducto)
+        
+            // Se muestra en consola para verificar su funcionamiento
+            console.log(carritoCompras);
+            console.log(eleccionProducto)
+        
+            // Se actualiza el carrito para que el cliente pueda ver el total de sus elecciones
+            actualizarCarrito()
+
+        } while (eleccionProducto != "ESC")
+
+    } else {
+        alert('El parametro indicado no existe')
+    }
 }
 
 function actualizarCarrito () {
@@ -82,4 +120,13 @@ function actualizarCarrito () {
 
 agregarCarrito ()
 
+
+function darkMode () {
+
+    console.log('pruebita')
+    
+}
+let black = document.getElementById("prueba");
+
+black.addEventListener("click", darkMode)
 
