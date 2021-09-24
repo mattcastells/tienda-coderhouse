@@ -1,16 +1,20 @@
-.products__container {
+#product__container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  align-content: flex-start;
+  align-content: center;
+  margin: auto;
 
   .product__box {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
+    max-width: 25%;
 
+    margin: auto;
     padding: 20px;
 
     .product__img {
@@ -44,7 +48,7 @@
       padding: 5px 10px;
       border-radius: 7px;
       border-color: whitesmoke;
-      width: 80%;
+      width: 60%;
       height: 3em;
 
       font-size: 1em;
