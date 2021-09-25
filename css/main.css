@@ -230,13 +230,14 @@ a {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  max-width: 25%;
+  width: 25%;
   margin: auto;
   padding: 20px;
 }
 
 #product__container .product__box .product__img {
-  height: 300px;
+  height: auto;
+  max-width: 100%;
   margin: 10px;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
