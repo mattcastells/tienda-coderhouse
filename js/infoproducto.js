@@ -1,3 +1,5 @@
+// Recuperacion de los datos guardados en el Storage para la generacion de la pagina individual del producto - Se utiliza en producto.html
+
 let contenedorProductos = document.getElementById('contenedorgeneral')                                                     // Se genera una variable y se le asocia un elemento del html
 
 function recuperar() {                                                                                                     // Se declara la funcion para recuperar datos
@@ -6,7 +8,7 @@ function recuperar() {                                                          
     if(recuperado){                                                                                                        // Condicional
         recuperado.forEach(el => {                                                                                         // Se itera sobre cada elemento y posteriormente se printean en el html
             contenedorProductos.innerHTML=` <div id="contenedor__pag__producto">                                           
-                                            <img id="foto__pag__producto" src="${el.img}" alt="${el.nombre}"></img>
+                                            <img id="foto__pag__producto" src=".${el.img}" alt="${el.nombre}"></img>
                                             <div id="contenedor__pag__info">
                                                 <h3 id="nombre__pag__producto"> ${el.nombre}</h3>
                                                 <h5 id="generos__pag__producto"> ${el.genero}</h5>

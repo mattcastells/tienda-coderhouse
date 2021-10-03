@@ -1,4 +1,4 @@
-#product__container {
+#contenedor__producto {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -6,7 +6,7 @@
   align-content: center;
   margin: auto;
 
-  .product__box {
+  .caja__producto {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@
     margin: auto;
     padding: 20px;
 
-    .product__img {
+    .imagen__producto {
       height: auto;
       max-width: 100%;
       margin: 10px;
@@ -35,17 +35,17 @@
       }
     }
 
-    .product__title {
+    .titulo__producto {
       font-size: 1.5em;
       margin-bottom: 8px;
     }
 
-    .product__price {
+    .precio__producto {
       font-size: 1.4em;
       margin-bottom: 8px;
     }
 
-    .product__button {
+    .boton__producto {
       padding: 5px 10px;
       border-radius: 7px;
       border-color: whitesmoke;

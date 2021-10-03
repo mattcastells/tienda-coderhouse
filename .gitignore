@@ -1,1 +1,4 @@
 viejos
+
+
+# Haces una lista, pusheas los objetos nuevos a la lista, haces un localStorage.clear(), haces un JSON.stringify a la lista y a ese JSON lo mandas al Storage

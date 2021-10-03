@@ -190,7 +190,7 @@ a {
   background-size: cover;
 }
 
-#filters__container {
+#contenedor__filtros {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,7 +212,7 @@ a {
   border-radius: 30px;
 }
 
-#filters__container #filter__type {
+#contenedor__filtros #tipos__filtros {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -233,7 +233,7 @@ a {
   color: whitesmoke;
 }
 
-#filters__container #filter__type #search__div {
+#contenedor__filtros #tipos__filtros #search__div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,23 +246,23 @@ a {
   width: 25%;
 }
 
-#filters__container #filter__type #search__div .search__bar {
+#contenedor__filtros #tipos__filtros #search__div .search__bar {
   margin-right: 20px;
   width: 100%;
   font-size: 1em;
 }
 
-#filters__container #filter__type .filter__button {
+#contenedor__filtros #tipos__filtros .boton__filtros {
   padding: 5px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-#filters__container #filter__type .filter__button:hover {
+#contenedor__filtros #tipos__filtros .boton__filtros:hover {
   color: #d63d00;
 }
 
-#product__container {
+#contenedor__producto {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,7 +279,7 @@ a {
   margin: auto;
 }
 
-#product__container .product__box {
+#contenedor__producto .caja__producto {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -300,7 +300,7 @@ a {
   padding: 20px;
 }
 
-#product__container .product__box .product__img {
+#contenedor__producto .caja__producto .imagen__producto {
   height: auto;
   max-width: 100%;
   margin: 10px;
@@ -313,7 +313,7 @@ a {
   transition: 0.4s;
 }
 
-#product__container .product__box .product__img:hover {
+#contenedor__producto .caja__producto .imagen__producto:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   opacity: 0.9;
@@ -321,17 +321,17 @@ a {
   transition: 0.4s;
 }
 
-#product__container .product__box .product__title {
+#contenedor__producto .caja__producto .titulo__producto {
   font-size: 1.5em;
   margin-bottom: 8px;
 }
 
-#product__container .product__box .product__price {
+#contenedor__producto .caja__producto .precio__producto {
   font-size: 1.4em;
   margin-bottom: 8px;
 }
 
-#product__container .product__box .product__button {
+#contenedor__producto .caja__producto .boton__producto {
   padding: 5px 10px;
   border-radius: 7px;
   border-color: whitesmoke;
@@ -343,7 +343,7 @@ a {
   background-image: linear-gradient(315deg, #2c7cb9 0%, #20a4f3 74%);
 }
 
-#product__container .product__box .product__button:hover {
+#contenedor__producto .caja__producto .boton__producto:hover {
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
 }

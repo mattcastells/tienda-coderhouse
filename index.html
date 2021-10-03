@@ -25,21 +25,49 @@
     </div>
 
     <!-- Carrousel -->
-    <div class="carousel">
-        <button id="retroceder">Retroceder</button>
-        <div id="imagen"></div>
-        <button id="avanzar">Avanzar</button>
+    <div id="carrusel">
+        <button id="retroceder__carrusel">Retroceder</button>
+        <div id="imagen__carrusel"></div>
+        <button id="avanzar__carrusel">Avanzar</button>
     </div>
 
     <!-- Zona de filtros-->
-    <div id="filters__container">
+    <div id="contenedor__filtros">
 
-        <div id="filter__type">
+        <form name="btn__filtro">
+            <input type="checkbox" id="accion" value="todos" name="filtro" checked>
+            <label for="Accion">Todos</label>
+            <input type="checkbox" id="accion" value="Accion" name="filtro">
+            <label for="Accion">Accion</label>
 
-        </div>
+            <input type="checkbox" id="aventura" value="Aventura" name="filtro">
+            <label for="Aventura">Aventura</label>
+
+            <input type="checkbox" id="terror" value="Terror" name="filtro">
+            <label for="Terror">Terror</label>
+
+            <input type="checkbox" id="carreras" value="Carreras" name="filtro">
+            <label for="Carreras">Carreras</label>
+
+            <input type="checkbox" id="deportes" value="Deportes" name="filtro">
+            <label for="Deportes">Deportes</label>
+
+            <input type="checkbox" id="rpg" value="Rpg" name="filtro">
+            <label for="Rpg">Rpg</label>
+
+            <input type="checkbox" id="peleas" value="Peleas" name="filtro">
+            <label for="Peleas">Peleas</label>
+
+            <input type="checkbox" id="plataformas" value="Plataformas" name="filtro">
+            <label for="Plataformas">Plataformas</label>
+
+            <input type="checkbox" id="estrategias" value="Estrategia" name="filtro">
+            <label for="Estrategias">Estrategias</label>
+        </form>
     </div>
 
-    <div id="product__container">
+
+    <div id="contenedor__producto">
         <!-- <div id="product__box">
             <a class="clickImage" href="/pages/producto.html" target="blank"><img class="product__img"
                     src="${juego.img}" alt="${juego.nombre}"></img></a>
@@ -49,7 +77,10 @@
         </div> -->
     </div>
 
+
+
     <script src="js/stock.js"></script>
     <script src="js/main.js"></script>
+    <!-- <script src="js/carrusel.js"></script> -->
 
 </html>
