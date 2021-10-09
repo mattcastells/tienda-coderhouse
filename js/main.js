@@ -1,22 +1,15 @@
-// Imprimir juegos en index.html
-
-let contenedorProductos = document.getElementById('contenedor__producto');                                    // Se crea la variable para asignarle el contenedor del html
+// Imprimir juegos en index.html                                 
 mostrarJuegos(stockJuegos);                                                                                   // Se llama a la funcion para que se ejecute y muestre los productos
 
 function mostrarJuegos(array) {  
-    contenedorProductos.innerHTML='';
     for (const juego of array) {                                                                              // Para cada juego en stockJuegos
-
-        let plantilla = document.createElement('div');                                                        // Se crea divisor
-        plantilla.setAttribute("class", "caja__producto");                                                    // Se le asigna la clase al divisor
-
-        plantilla.innerHTML = `<a class="clickImage" id=${juego.id} href='pages/producto.html' target="blank"><img class="imagen__producto" src="${juego.img}" alt="${juego.nombre}"></img></a>
+        $('#contenedor__producto').append(                                                                    // Se agrega la plantilla del juego al contenedor
+            `<div class="caja__producto">
+                            <a class="clickImage" id=${juego.id} href='pages/producto.html' target="blank"><img class="imagen__producto" src="${juego.img}" alt="${juego.nombre}"></img></a>
                             <h4 class="titulo__producto"> ${juego.nombre}</h4>
                             <h5 class="precio__producto">$ ${juego.precio}</h5>
-                            <button class="boton__producto">Añadir al carrito</button>`;
-                            
-        contenedorProductos.appendChild(plantilla)                                                          // Se agrega la plantilla del juego al contenedor
-
+                            <button class="boton__producto">Añadir al carrito</button>
+            </div>`)                            
     }
 }
 
@@ -40,6 +33,8 @@ let tomarDatos = document.querySelectorAll('.clickImage');                      
  }) )
  
  
+
+// Filtrar mediante checkboxes
 
 function checkbox() {
     let input_checkbox_filtro = document.btn__filtro.filtro;
@@ -66,6 +61,40 @@ function checkbox() {
 }
 
 checkbox()
+
+
+// Filtrar mediante searchbar
+
+
+
+
+
+
+
+
+
+
+
+// let search_input  = document.getElementById('searchBar');
+// let search_term  = "";
+
+// search_input.addEventListener('input', e => {
+
+// // Guardar el valor de input
+// search_term = e.target.value;
+
+// // Redesplegar juegos segun el valor de search_term
+// mostrarJuegoss()
+
+// });
+
+// let contenedorProductos = document.getElementById('contenedor__producto');
+
+// const mostrarJuegoss = async () => {
+//     // Limpiar resultados
+//     contenedorProductos.innerHTML = "";
+// }
+
 
 
 

@@ -25,16 +25,34 @@
     </div>
 
     <!-- Carrousel -->
-    <div id="carrusel">
-        <button id="retroceder__carrusel">Retroceder</button>
-        <div id="imagen__carrusel"></div>
-        <button id="avanzar__carrusel">Avanzar</button>
+
+    <div class="carousel-container flexc">
+        <div class="left-arrow" onclick="moveLeft()">
+            <h1 class="flexc">&lt;</h1>
+        </div>
+
+        <div class="image-container flexc" style="flex-direction: column;">
+            <img class="carrusel__img" src="./images/pagina/d3-banner.jpg" alt="image" />
+            <img class="carrusel__img" src="./images/pagina/ggstrive-banner.jpg" alt="image" />
+            <img class="carrusel__img" src="./images/pagina/mhr-banner.jpg" alt="image" />
+            <img class="carrusel__img" src="./images/pagina/mk-banner.jpg" alt="image" />
+            <img class="carrusel__img" src="./images/pagina/nioh-banner.jpg" alt="image" />
+            <div>
+                <ul class="dotList"></ul>
+            </div>
+        </div>
+
+        <div class="right-arrow" onclick="moveRight()">
+            <h1 class="flexc">&gt;</h1>
+        </div>
     </div>
 
     <!-- Zona de filtros-->
     <div id="contenedor__filtros">
 
-        <form name="btn__filtro">
+        <input type="text" id="searchBar" placeholder="Buscar...">
+
+        <form name="btn__filtro" id="filtros__form">
             <input type="checkbox" id="accion" value="todos" name="filtro" checked>
             <label for="Accion">Todos</label>
             <input type="checkbox" id="accion" value="Accion" name="filtro">
@@ -68,19 +86,14 @@
 
 
     <div id="contenedor__producto">
-        <!-- <div id="product__box">
-            <a class="clickImage" href="/pages/producto.html" target="blank"><img class="product__img"
-                    src="${juego.img}" alt="${juego.nombre}"></img></a>
-            <h4 class="product__title"> Juego Nombre</h4>
-            <h5 class="product__price"> Juego Precio</h5>
-            <button class="product__button">Añadir al carrito</button>
-        </div> -->
+
     </div>
 
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/stock.js"></script>
+    <script src="js/carrusel.js"></script>
     <script src="js/main.js"></script>
-    <!-- <script src="js/carrusel.js"></script> -->
 
 </html>
