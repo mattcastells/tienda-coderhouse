@@ -311,6 +311,24 @@ a {
   color: #d63d00;
 }
 
+#compras__h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  font-size: 2em;
+}
+
+.carrito__contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #contenedor__producto {
   display: -webkit-box;
   display: -ms-flexbox;

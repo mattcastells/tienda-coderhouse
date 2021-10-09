@@ -65,16 +65,6 @@ checkbox()
 
 // Filtrar mediante searchbar
 
-
-
-
-
-
-
-
-
-
-
 // let search_input  = document.getElementById('searchBar');
 // let search_term  = "";
 

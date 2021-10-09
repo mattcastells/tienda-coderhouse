@@ -1,41 +1,23 @@
+// Sin funcionar todavia
+
 let carritoDeCompras = [];
 
-const contenedorProducto = document.getElementById('product__container');
-const contenedorCarrito = document.getElementById('carrito-contenedor');
+let botonAgregarCarrito = document.getElementsByClassName('boton__producto');
 
-const contadorCarrito = document.getElementById('contadorCarrito');
-const precioTotal = document.getElementById('precioTotal');
 
-mostrarProductos(stockJuegos)
 
-function mostrarProductos(array) {
+function agregarAlCarrito(informacionDelJuego) {
 
-    array.foreach(productos => {
+    informacionDelJuego = stockJuegos.find(prod => prod.id == id);
 
-        let div = document.createElement('div');
-        div.classList.add('producto');
-        div.innerHTML += `<a class="clickImage" href="/pages/producto.html" target="blank"><img class="product__img" src="${juego.img}" alt="${juego.nombre}"></img></a>
-                          <h4 class="product__title"> ${juego.nombre}</h4>
-                          <h5 class="product__price">$ ${juego.precio}</h5>
-                          <button id="product__button__${juego.id}">Añadir al carrito</button>`;
+    let infoProducto = [];
+    infoProducto.push(producto)
 
-    })
-
-    let boton = document.getElementById(`product__button__${juego.id}`)
-    boton.addEventListener('click', ()=>{
-        agregarAlCarrito(juego.id)
-    })
-}
-
-function agregarAlCarrito(id) {
-
-    let productoAgregar = stockJuegos.find(prod => prod.id == id)
-    console.log(productoAgregar);
+    console.log(infoProducto);
 
 }
 
-function actualizarCarrito() {
+function actualizarCarrito() {}
 
 
-
-}
+// botonAgregarCarrito.addEventListener("click", agregarAlCarrito)
