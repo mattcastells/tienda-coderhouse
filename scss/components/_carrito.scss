@@ -6,6 +6,41 @@
   font-size: 2em;
 }
 
-.carrito__contenedor {
+#contenedorCarrito {
   display: flex;
+  flex-direction: row;
+
+  .contenedor__pag__carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .foto__pag__carrito {
+      width: 200px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.48) 6px 2px 16px 0px,
+        rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    }
+
+    .eliminar__producto {
+      width: 50px;
+      height: 30px;
+      border-radius: 8px;
+      background-color: red;
+      color: white;
+      margin-top: 10px;
+    }
+  }
+}
+
+#contedor__precio__final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
