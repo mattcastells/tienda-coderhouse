@@ -16,7 +16,6 @@ $.getJSON('js/stock.json', function (data) {                                    
 
 
 // Imprimir juegos en index.html                                 
-// mostrarJuegos(stockProductos);                                                                             // Se llama a la funcion para que se ejecute y muestre los productos
 
 function mostrarJuegos(array) {  
     for (const juego of array) {                                                                              // Para cada juego en stockJuegos
@@ -25,7 +24,7 @@ function mostrarJuegos(array) {
                             <a class="clickImage" id=${juego.id} href='pages/producto.html' target="blank"><img class="imagen__producto" src="${juego.img}" alt="${juego.nombre}"></img></a>
                             <h4 class="titulo__producto"> ${juego.nombre}</h4>
                             <h5 class="precio__producto">$ ${juego.precio}</h5>
-                            <button class="boton__producto botonCarrito">Añadir al carrito</button>
+                            <button class="boton__producto">Añadir al carrito</button>
             </div>`)                            
     }
 }
@@ -44,6 +43,15 @@ function capturarDatos (id) {                                                   
 
 }
 
+// Tomar datos de los productos a partir de su imagen en index.html para recuperarlos en producto.html
+
+let tomarDatos = document.querySelectorAll('.clickImage',);                                                  // Se le asigna un elemento del html a la variable tomarDatos
+ tomarDatos.forEach((producto) => producto.addEventListener("click",()=>{                                    // Se le agrega el evento click y la funcionalidad de capturar datos a todos los elementos con la clase "clickImage" (Imagenes de los productos)
+     capturarDatos(producto.id)
+     console.log(tomarDatos);
+ }) )
+
+
 
 // Capturar datos de los juegos seleccionados y agregarlos al carrito, para posteriormente re-imprimirlos en compras.html
 
@@ -54,51 +62,36 @@ function capturarDatosCarrito (id) {                                            
     let productoSeleccionado = stockJuegos.find(prod => prod.id == id)                                      // Se itera en el array general de productos y se le asigna un valor a la variable juego, identificando al mismo por su id
                                                                                       
     productoCarrito.push(productoSeleccionado)                                                              // Se pushea la variable juego (id) dentro del array establecido arriba (productoCarrito)
-    console.log(productoCarrito)
+    console.log(productoSeleccionado)
 
      localStorage.setItem('Producto carrito', JSON.stringify(productoCarrito));                             // Se guarda la informacion del array productoCarrito como un objeto JSON en el local storage
 
 }
 
-// Tomar datos de los productos a partir de su imagen en index.html para recuperarlos en producto.html
-
-let tomarDatos = document.querySelectorAll('.clickImage',);                                                  // Se le asigna un elemento del html a la variable tomarDatos
- tomarDatos.forEach((producto) => producto.addEventListener("click",()=>{                                    // Se le agrega el evento click y la funcionalidad de capturar datos a todos los elementos con la clase "clickImage" (Imagenes de los productos)
-     capturarDatos(producto.id)
- }) )
-
  // Tomar datos de los productos a partir del boton de compra en index.html para recuperarlos en compras.html
 
- let tomarDatosCarrito = document.querySelectorAll('.botonCarrito');                                         // Se le asigna un elemento del html a la variable tomarDatos
- tomarDatosCarrito.forEach((producto) => producto.addEventListener("click",()=>{                             // Se le agrega el evento click y la funcionalidad de capturar datos a todos los elementos con la clase "clickImage" (Imagenes de los productos)
-     capturarDatosCarrito(producto.id)
+ let tomarDatosCarrito = document.querySelectorAll('.boton__producto');                                         // Se le asigna un elemento del html a la variable tomarDatos
+ tomarDatosCarrito.forEach((producto) => producto.addEventListener("click", ()=>{                             // Se le agrega el evento click y la funcionalidad de capturar datos a todos los elementos con la clase "clickImage" (Imagenes de los productos)
+    //  capturarDatosCarrito(producto.id)
+    //  console.log(tomarDatosCarrito);
+    console.log('Funciona');
  }) )
  
-
- 
-
-
-
-
 // Filtrar mediante checkboxes en el index
 
 function checkbox() {                                                                                        // Se declara la funcion checkbox
     let input_checkbox_filtro = document.btn__filtro.filtro;                                                 // Se le asocia un elemento del html a la variable
     
     input_checkbox_filtro.forEach(el=>{                                                                      // Por cada elemento en
-
         el.addEventListener('change', function(){                                                            // Se le agrega un listener de cambio al parametro elemento
             for (let i = 0; i < input_checkbox_filtro.length; i++) {
-               
                 if(input_checkbox_filtro[i].checked){                                                        // El condicional establece que si el elemento se encuentran tildado/checked
                     let grupo = input_checkbox_filtro[i].value;
-                    
                     if(grupo == 'todos' || grupo == false){                                                  // Si la caja todos, o ninguna caja se encuentra tiltada, se muestran todos los juegos
                         mostrarJuegos(stockJuegos)
                     }else{                                                                                   // Caso contrario, se muestran los juegos que coincidan con el parametro establecido por el usuario mediante las cajas
                       const findGrupo = stockJuegos.filter(el => el.genero.find(el => el == grupo));
                     mostrarJuegos(findGrupo)
-                      
                     }
                 } 
             }
