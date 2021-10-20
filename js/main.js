@@ -33,7 +33,7 @@ function mostrarJuegos(array) {
 
 function capturarDatos (id) {                                                                               // Se declara una funcion que capture los datos para generar contenido en producto.html
 
-    let juego = stockJuegos.find(prod => prod.id == id)                                                     // Se itera en el array general de productos y se le asigna un valor a la variable juego, identificando al mismo por su id
+    let juego = stockProductos.find(prod => prod.id == id)                                                     // Se itera en el array general de productos y se le asigna un valor a la variable juego, identificando al mismo por su id
 
     let productoInfo = [];                                                                                  // La variable se declara con scope local para que su valor se pierda (sea reutilizable)
     productoInfo.push(juego)                                                                                // Se pushea la variable juego (id) dentro del array establecido arriba
@@ -59,7 +59,7 @@ let productoCarrito = []; // La variable se declara con scope global para que su
 
 function capturarDatosCarrito (id) {                                                                        // Se declara una funcion que capture los datos para el carrito, compras.html
 
-    let productoSeleccionado = stockJuegos.find(prod => prod.id == id)                                      // Se itera en el array general de productos y se le asigna un valor a la variable juego, identificando al mismo por su id
+    let productoSeleccionado = stockProductos.find(prod => prod.id == id)                                      // Se itera en el array general de productos y se le asigna un valor a la variable juego, identificando al mismo por su id
                                                                                       
     productoCarrito.push(productoSeleccionado)                                                              // Se pushea la variable juego (id) dentro del array establecido arriba (productoCarrito)
     console.log(productoSeleccionado)
@@ -87,11 +87,13 @@ function checkbox() {                                                           
             for (let i = 0; i < input_checkbox_filtro.length; i++) {
                 if(input_checkbox_filtro[i].checked){                                                        // El condicional establece que si el elemento se encuentran tildado/checked
                     let grupo = input_checkbox_filtro[i].value;
-                    if(grupo == 'todos' || grupo == false){                                                  // Si la caja todos, o ninguna caja se encuentra tiltada, se muestran todos los juegos
-                        mostrarJuegos(stockJuegos)
+                    if(grupo == 'todos' || grupo == false){ 
+                        $('#contenedor__producto').empty();                                                  // Si la caja todos, o ninguna caja se encuentra tiltada, se muestran todos los juegos
+                        mostrarJuegos(stockProductos);
                     }else{                                                                                   // Caso contrario, se muestran los juegos que coincidan con el parametro establecido por el usuario mediante las cajas
-                      const findGrupo = stockJuegos.filter(el => el.genero.find(el => el == grupo));
-                    mostrarJuegos(findGrupo)
+                        $('#contenedor__producto').empty();
+                        const findGrupo = stockProductos.filter(el => el.genero.find(el => el == grupo));
+                        mostrarJuegos(findGrupo);
                     }
                 } 
             }
@@ -100,6 +102,12 @@ function checkbox() {                                                           
 }
 
 checkbox()
+
+let botonTodos = document.querySelector('#todos')
+botonTodos.style.display = 'none';
+
+let labelTodos = document.querySelector('#labeltodos');
+labelTodos.style.display = 'none';
 
 
 // Filtrar mediante searchbar
@@ -110,7 +118,7 @@ function buscar(e){                                                             
     e.preventDefault()                                                                                          // Se previene la carga automatica del parametro
     console.log(e.target.value);
     let texto = e.target.value.toLowerCase()                                                                    // Se declara la variable texto, y se le asigna como valor los datos introducidos por el usuario, al mismo tiempo se transforma a minuscula
-    let buscar = stockJuegos.filter(prod => prod.nombre.toLocaleLowerCase().includes(texto))                    // Se declara la variable buscar y se le asocia un filtro en stockJuegos
+    let buscar = stockProductos.filter(prod => prod.nombre.toLocaleLowerCase().includes(texto))                    // Se declara la variable buscar y se le asocia un filtro en stockJuegos
     console.log(buscar);
     $('#contenedor__producto').empty()                                                                          // Se vacia el contenedor producto
     mostrarJuegos(buscar)                                                                                       // Se muestran los juegos que coincidan con el valor introducido en buscar
