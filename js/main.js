@@ -72,8 +72,6 @@ function capturarDatosCarrito (id) {                                            
 
  let tomarDatosCarrito = document.querySelectorAll('.boton__producto');                                         // Se le asigna un elemento del html a la variable tomarDatos
  tomarDatosCarrito.forEach((producto) => producto.addEventListener("click", ()=>{                             // Se le agrega el evento click y la funcionalidad de capturar datos a todos los elementos con la clase "clickImage" (Imagenes de los productos)
-    //  capturarDatosCarrito(producto.id)
-    //  console.log(tomarDatosCarrito);
     console.log('Funciona');
  }) )
  
